@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for jc-club-project" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+          <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/mapstruct/mapstruct-processor/1.6.2/mapstruct-processor-1.6.2.jar" />
+          <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/mapstruct/mapstruct/1.6.2/mapstruct-1.6.2.jar" />
+        </processorPath>
+        <module name="jc-club-application-job" />
+        <module name="jc-club-project-api" />
+        <module name="jc-club-application-controller" />
+        <module name="jc-club-project-domain" />
+        <module name="jc-club-project-infra" />
+        <module name="jc-club-application-mq" />
+        <module name="jc-club-project-starter" />
+        <module name="jc-club-project-common" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="23" />
+  </component>
+</project>

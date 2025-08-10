@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-application/jc-club-application-controller/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-application/jc-club-application-controller/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-application/jc-club-application-job/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-application/jc-club-application-job/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-application/jc-club-application-mq/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-application/jc-club-application-mq/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-application/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-application/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-domain/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-infra/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-infra/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/jc-club-project-starter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/jc-club-project/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

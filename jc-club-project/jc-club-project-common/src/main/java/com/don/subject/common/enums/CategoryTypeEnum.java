@@ -19,8 +19,8 @@ public enum CategoryTypeEnum {
         this.desc = desc;
     }
 
-    public static ResultCodeEnum getByCode(int codeVal){
-        for(ResultCodeEnum resultCodeEnum : ResultCodeEnum.values())
+    public static CategoryTypeEnum getByCode(int codeVal){
+        for(CategoryTypeEnum resultCodeEnum : CategoryTypeEnum.values())
             if(resultCodeEnum.code == codeVal)
                 return resultCodeEnum;
         return null;

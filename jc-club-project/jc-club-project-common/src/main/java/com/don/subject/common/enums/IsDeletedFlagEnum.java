@@ -22,8 +22,8 @@ public enum IsDeletedFlagEnum {
         this.desc = desc;
     }
 
-    public static ResultCodeEnum getByCode(int codeVal){
-        for(ResultCodeEnum resultCodeEnum : ResultCodeEnum.values())
+    public static IsDeletedFlagEnum getByCode(int codeVal){
+        for(IsDeletedFlagEnum resultCodeEnum : IsDeletedFlagEnum.values())
             if(resultCodeEnum.code == codeVal)
                 return resultCodeEnum;
         return null;

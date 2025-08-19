@@ -23,7 +23,7 @@ import java.util.List;
 
 @Service
 @Slf4j
-public class SubjectCategoryDomainServiceIml implements SubjectCategoryDomainService {
+public class SubjectCategoryDomainServiceImpl implements SubjectCategoryDomainService {
 
     @Autowired
     private SubjectCategoryService subjectCategoryService;

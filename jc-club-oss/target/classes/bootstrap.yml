@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: jc-club-oss
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        fail-fast: false
+        ip: 127.0.0.1
+        port: 4000
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: ""
+        group: DEFAULT_GROUP
+        file-extension: yaml
+        access-key: "nacos"
+        secret-key: "@TXYfwq798798"
+        refresh-enabled: true
+        prefix: ${spring.application.name}
+        #-${spring.profiles.active}
+

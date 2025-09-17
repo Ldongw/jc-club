@@ -60,4 +60,4 @@ minio:
 #logging:
 #  level:
 #    root: trace
-#        #-${spring.profiles.active}
+        #-${spring.profiles.active}

@@ -1,4 +1,4 @@
-package com.don.subject;
+package com.don.auth;
 
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
@@ -7,14 +7,12 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import javax.annotation.PreDestroy;
-
 @SpringBootApplication(scanBasePackages = "com.don")
-@MapperScan("com.don.subject.**.mapper")
-public class SubjectApplication {
+@MapperScan("com.don.**")
+public class AuthApplication {
     public static void main(String[] args) throws JSchException {
         sshEstablish();
-        SpringApplication.run(SubjectApplication.class, args);
+        SpringApplication.run(AuthApplication.class, args);
     }
 
     private static void sshEstablish() throws JSchException {

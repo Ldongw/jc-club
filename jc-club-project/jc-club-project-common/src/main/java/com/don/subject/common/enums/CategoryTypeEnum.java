@@ -1,10 +1,13 @@
 package com.don.subject.common.enums;
 
+import lombok.Getter;
+
 /**
  * 分类类型
  * @author A
  * @date 2025/8/14
  **/
+@Getter
 public enum CategoryTypeEnum {
 
     PRIMARY(1,"岗位大类"),

@@ -19,7 +19,7 @@ public class SubjectApplication {
 
     private static void sshEstablish() throws JSchException {
         JSch jsch = new JSch();
-        Session session = jsch.getSession("ubuntu", "175.178.244.96", 22);
+        Session session = jsch.getSession("root", "129.204.53.142", 22);
         session.setPassword("@TXYfwq798798");
         session.setConfig("StrictHostKeyChecking", "no");
         session.connect();

@@ -7,6 +7,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="jc-club-auth-infra" />
+        <module name="jc-club-auth-common" />
+        <module name="jc-club-gateway" />
+        <module name="jc-club-auth-application-job" />
+        <module name="jc-club-auth-application-controller" />
+        <module name="jc-club-auth-api" />
+        <module name="jc-club-oss" />
+        <module name="jc-club-auth-domain" />
+        <module name="jc-club-auth-starter" />
+        <module name="jc-club-auth-application-mq" />
       </profile>
       <profile name="Annotation profile for jc-club-project" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />

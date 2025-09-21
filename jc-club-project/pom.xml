@@ -54,9 +54,8 @@
         </repository>
     </repositories>
 
-
-<!--    需要指定 lombok 先于 mapstruct-processor 否则无 getter setter 方法，-->
-<!--    mapstruct 无法正常工作-->
+    <!--    需要指定 lombok 先于 mapstruct-processor 否则无 getter setter 方法，-->
+    <!--    mapstruct 无法正常工作-->
     <build>
         <plugins>
             <plugin>

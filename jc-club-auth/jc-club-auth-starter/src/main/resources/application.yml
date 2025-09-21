@@ -27,13 +27,36 @@ spring:
           enabled: true
         config:
           enabled: true
+  #redis 配置
+  redis:
+    # Redis数据库索引（默认为0）
+    database: 1
+    # Redis服务器地址
+    host: 127.0.0.1
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+    password: "@TXYfwq798798"
+    # 连接超时时间
+    timeout: 2s
+    lettuce:
+      pool:
+        # 连接池最大连接数
+        max-active: 200
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1ms
+        # 连接池中的最大空闲连接
+        max-idle: 10
+        # 连接池中的最小空闲连接
+        min-idle: 0
+
 logging:
   config: classpath:log4j2-spring.xml
 PasswordPublicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBALQH7TkyH/N8fji9gkZsWSwACsDXUuxi1/eUfVdGmvJN5uoyM3lHW6Bvc4tqzj2UO7XwVL/fXNjUW58SixejL/sCAwEAAQ==
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-############## Sa-Token 配置 (文档: https://sa-token.cc) ##############
+############# Sa-Token 配置 (文档: https://sa-token.cc) ##############
 sa-token:
   # token 名称（同时也是 cookie 名称）
   token-name: satoken

@@ -1,14 +1,16 @@
 package com.don.auth.infra.basic.service;
 
-import com.don.auth.infra.basic.entity.AuthUser;
+import com.don.auth.infra.basic.entity.AuthRole;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
 /**
- * 用户表(AuthUser)表服务接口
+ * 角色表(AuthRole)表服务接口
  *
  * @author makejava
- * @since 2025-09-21 18:41:02
+ * @since 2025-09-22 10:55:46
  */
-public interface AuthUserService {
+public interface AuthRoleService {
 
     /**
      * 通过ID查询单条数据
@@ -16,23 +18,23 @@ public interface AuthUserService {
      * @param id 主键
      * @return 实例对象
      */
-    AuthUser queryById(Long id);
+    AuthRole queryById(Long id);
 
     /**
      * 新增数据
      *
-     * @param authUser 实例对象
+     * @param authRole 实例对象
      * @return 实例对象
      */
-    Integer insert(AuthUser authUser);
+    Integer insert(AuthRole authRole);
 
     /**
      * 修改数据
      *
-     * @param authUser 实例对象
+     * @param authRole 实例对象
      * @return 实例对象
      */
-    Integer update(AuthUser authUser);
+    Integer update(AuthRole authRole);
 
     /**
      * 通过主键删除数据

@@ -4,3 +4,60 @@ minio:
   url: http://localhost:9001
   accessKey: minioadmin
   secretKey: minioadmin
+#spring:
+#  config:
+#    import: "optional:nacos:jc-club-oss-dev.yaml?group=DEFAULT_GROUP"
+#  application:
+#    name: jc-club-oss
+#  profiles:
+#    active: dev
+#  cloud:
+#    nacos:
+#      config:
+#        server-addr: 127.0.0.1:8848
+#        namespace:    # 默认 public 就写空
+#        group: DEFAULT_GROUP
+#        file-extension: yaml
+#        access-key: "nacos"
+#        secret-key: "@TXYfwq798798"
+#        refresh-enabled: true
+#        prefix: ${spring.application.name}
+#spring:
+#  application:
+#    name: jc-club-oss
+#  profiles:
+#    active: dev
+#  cloud:
+#    nacos:
+#      config:
+#        server-addr: 127.0.0.1:8848
+#        namespace: ""
+#        group: DEFAULT_GROUP
+#        file-extension: yaml
+#        access-key: "nacos"
+#        secret-key: "@TXYfwq798798"
+#        refresh-enabled: true
+#        name: ${spring.application.name}-${spring.profiles.active}
+        #        import-check:
+        #          enabled: false
+        #-${spring.profiles.active}
+#spring:
+#  application:
+#    name: jc-club-oss
+#  profiles:
+#    active: dev
+#  cloud:
+#    nacos:
+#      config:
+#        server-addr: 127.0.0.1:8848
+#        namespace: ""
+#        group: DEFAULT_GROUP
+#        file-extension: yaml
+#        access-key: "nacos"
+#        secret-key: "@TXYfwq798798"
+#        refresh-enabled: true
+#        prefix: ${spring.application.name}
+#logging:
+#  level:
+#    root: trace
+#        #-${spring.profiles.active}

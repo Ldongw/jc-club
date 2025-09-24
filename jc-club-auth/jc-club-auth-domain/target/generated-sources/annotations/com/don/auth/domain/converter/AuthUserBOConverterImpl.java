@@ -6,7 +6,7 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-09-22T10:33:53+0800",
+    date = "2025-09-24T16:16:43+0800",
     comments = "version: 1.6.2, compiler: javac, environment: Java 21 (Oracle Corporation)"
 )
 public class AuthUserBOConverterImpl implements AuthUserBOConverter {

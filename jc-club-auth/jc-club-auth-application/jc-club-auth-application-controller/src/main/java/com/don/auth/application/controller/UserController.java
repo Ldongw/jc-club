@@ -11,6 +11,7 @@ import com.don.auth.domain.entity.AuthUserBO;
 import com.don.auth.domain.service.AuthUserDomainService;
 import com.don.auth.infra.basic.entity.AuthUser;
 import com.don.auth.infra.basic.mapper.AuthUserDao;
+import com.don.auth.infra.basic.service.AuthUserRoleService;
 import com.don.auth.infra.basic.service.AuthUserService;
 import com.google.common.base.Preconditions;
 import lombok.extern.slf4j.Slf4j;

@@ -1,16 +1,16 @@
 package com.don.auth.infra.basic.service;
 
-import com.don.auth.infra.basic.entity.AuthRole;
+import com.don.auth.infra.basic.entity.AuthPermission;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
 /**
- * 角色表(AuthRole)表服务接口
+ * 权限表(AuthPermission)表服务接口
  *
  * @author makejava
- * @since 2025-09-22 10:55:46
+ * @since 2025-09-23 10:27:12
  */
-public interface AuthRoleService {
+public interface AuthPermissionService {
 
     /**
      * 通过ID查询单条数据
@@ -18,23 +18,23 @@ public interface AuthRoleService {
      * @param id 主键
      * @return 实例对象
      */
-    AuthRole queryById(Long id);
+    AuthPermission queryById(Long id);
 
     /**
      * 新增数据
      *
-     * @param authRole 实例对象
+     * @param authPermission 实例对象
      * @return 实例对象
      */
-    Integer insert(AuthRole authRole);
+    int insert(AuthPermission authPermission);
 
     /**
      * 修改数据
      *
-     * @param authRole 实例对象
+     * @param authPermission 实例对象
      * @return 实例对象
      */
-    Integer update(AuthRole authRole);
+    int update(AuthPermission authPermission);
 
     /**
      * 通过主键删除数据
@@ -44,5 +44,4 @@ public interface AuthRoleService {
      */
     boolean deleteById(Long id);
 
-    AuthRole queryByCondition(AuthRole authRole);
 }

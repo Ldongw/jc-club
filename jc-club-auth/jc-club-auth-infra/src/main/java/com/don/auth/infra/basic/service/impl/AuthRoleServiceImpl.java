@@ -6,6 +6,7 @@ import com.don.auth.infra.basic.service.AuthRoleService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 角色表(AuthRole)表服务实现类
@@ -67,4 +68,5 @@ public class AuthRoleServiceImpl implements AuthRoleService {
     public AuthRole queryByCondition(AuthRole authRole) {
         return this.authRoleDao.queryAllByLimit(authRole);
     }
+
 }

@@ -13,7 +13,7 @@ import javax.annotation.PreDestroy;
 @MapperScan("com.don.subject.**.mapper")
 public class SubjectApplication {
     public static void main(String[] args) throws JSchException {
-        sshEstablish();
+//        sshEstablish();
         SpringApplication.run(SubjectApplication.class, args);
     }
 

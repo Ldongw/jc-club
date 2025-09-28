@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jc-club-gateway" />
+        <module name="jc-club-wx" />
         <module name="jc-club-oss" />
       </profile>
       <profile name="Annotation profile for jc-club-auth" enabled="true">
@@ -21,32 +22,19 @@
         </processorPath>
         <module name="jc-club-auth-infra" />
         <module name="jc-club-auth-application-job" />
+        <module name="jc-club-application-controller" />
         <module name="jc-club-auth-api" />
+        <module name="jc-club-project-domain" />
         <module name="jc-club-auth-domain" />
         <module name="jc-club-auth-starter" />
         <module name="jc-club-auth-application-mq" />
-        <module name="jc-club-auth-common" />
-        <module name="jc-club-auth-application-controller" />
-      </profile>
-      <profile name="Annotation profile for jc-club-project" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
-          <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-          <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/mapstruct/mapstruct-processor/1.6.2/mapstruct-processor-1.6.2.jar" />
-          <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/mapstruct/mapstruct/1.6.2/mapstruct-1.6.2.jar" />
-          <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
-          <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/mapstruct/mapstruct-processor/1.6.2/mapstruct-processor-1.6.2.jar" />
-          <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/mapstruct/mapstruct/1.6.2/mapstruct-1.6.2.jar" />
-        </processorPath>
+        <module name="jc-club-project-starter" />
         <module name="jc-club-application-job" />
+        <module name="jc-club-auth-common" />
         <module name="jc-club-project-api" />
-        <module name="jc-club-application-controller" />
-        <module name="jc-club-project-domain" />
+        <module name="jc-club-auth-application-controller" />
         <module name="jc-club-project-infra" />
         <module name="jc-club-application-mq" />
-        <module name="jc-club-project-starter" />
         <module name="jc-club-project-common" />
       </profile>
     </annotationProcessing>

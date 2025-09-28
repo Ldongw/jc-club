@@ -1,5 +1,6 @@
 package com.don.auth.infra.basic.mapper;
 
+import com.don.auth.infra.basic.entity.AuthRole;
 import com.don.auth.infra.basic.entity.AuthRolePermission;
 import org.apache.ibatis.annotations.Param;
 import java.util.List;
@@ -77,5 +78,6 @@ public interface AuthRolePermissionDao {
      */
     int deleteById(Long id);
 
+    List<AuthRole> queryByRoleList(List<Long> roleIdList);
 }
 

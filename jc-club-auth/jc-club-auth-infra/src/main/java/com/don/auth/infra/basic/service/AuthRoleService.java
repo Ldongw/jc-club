@@ -4,6 +4,8 @@ import com.don.auth.infra.basic.entity.AuthRole;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
+import java.util.List;
+
 /**
  * 角色表(AuthRole)表服务接口
  *
@@ -45,4 +47,5 @@ public interface AuthRoleService {
     boolean deleteById(Long id);
 
     AuthRole queryByCondition(AuthRole authRole);
+
 }

@@ -1,5 +1,6 @@
 package com.don.auth.infra.basic.service;
 
+import com.don.auth.infra.basic.entity.AuthRole;
 import com.don.auth.infra.basic.entity.AuthRolePermission;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -48,5 +49,7 @@ public interface AuthRolePermissionService {
      * @return 是否成功
      */
     boolean deleteById(Long id);
+
+    List<AuthRolePermission> queryByCondition(AuthRolePermission authRolePermission);
 
 }

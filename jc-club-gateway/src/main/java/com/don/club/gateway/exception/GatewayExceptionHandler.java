@@ -42,7 +42,7 @@ public class GatewayExceptionHandler implements ErrorWebExceptionHandler {
             DataBufferFactory dataBufferFactory = response.bufferFactory();
             byte[] bytes = null;
             try {
-                objectMapper.writeValueAsBytes(result);
+                bytes = objectMapper.writeValueAsBytes(result);
             } catch (JsonProcessingException e) {
                 e.printStackTrace();
             }

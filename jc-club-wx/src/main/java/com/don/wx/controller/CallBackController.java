@@ -45,7 +45,7 @@ public class CallBackController {
         String shaStr = SHA1.getSHA1(token, timestamp, nonce, "");
         if(signature.equals(shaStr))
             return echostr;
-        return "蔡家树";
+        return "unknown";
     }
 
     @PostMapping(value = "/callback", produces = "application/xml;charset=UTF-8")

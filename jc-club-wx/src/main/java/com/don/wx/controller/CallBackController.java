@@ -76,12 +76,6 @@ public class CallBackController {
         return replyContent;
     }
 
-    @GetMapping("fen")
-    public String fen(){
-        log.info("正在访问 fen");
-        return "<div style='text-align: center;'>美神降临<br/>\n" +
-                "<img src='/beauty.jpeg' style='max-width: 50%; height: auto;'/></div>";
-    }
 }
 //String msg = "<xml>\n" +
 //        "  <ToUserName><![CDATA[" + fromUserName + "]]></ToUserName>\n" +

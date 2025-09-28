@@ -13,17 +13,17 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @EnableAspectJAutoProxy(exposeProxy = true)
 public class AuthApplication {
     public static void main(String[] args) throws JSchException {
-        sshEstablish();
+//        sshEstablish();
         SpringApplication.run(AuthApplication.class, args);
     }
 
-    private static void sshEstablish() throws JSchException {
-        JSch jsch = new JSch();
-        Session session = jsch.getSession("root", "129.204.53.142", 22);
-        session.setPassword("@TXYfwq798798");
-        session.setConfig("StrictHostKeyChecking", "no");
-        session.connect();
-        session.setPortForwardingL(3307, "127.0.0.1", 3306);
-    }
+//    private static void sshEstablish() throws JSchException {
+//        JSch jsch = new JSch();
+//        Session session = jsch.getSession("root", "129.204.53.142", 22);
+//        session.setPassword("@TXYfwq798798");
+//        session.setConfig("StrictHostKeyChecking", "no");
+//        session.connect();
+//        session.setPortForwardingL(3306, "127.0.0.1", 3306);
+//    }
 
 }

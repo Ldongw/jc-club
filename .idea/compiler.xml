@@ -7,11 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jc-club-gateway" />
         <module name="jc-club-wx" />
         <module name="jc-club-oss" />
       </profile>
-      <profile name="Annotation profile for jc-club-auth" enabled="true">
+      <profile name="Annotation profile for jc-club-gateway" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -21,6 +20,7 @@
           <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/mapstruct/mapstruct/1.6.2/mapstruct-1.6.2.jar" />
         </processorPath>
         <module name="jc-club-auth-infra" />
+        <module name="jc-club-gateway" />
         <module name="jc-club-auth-application-job" />
         <module name="jc-club-application-controller" />
         <module name="jc-club-auth-api" />

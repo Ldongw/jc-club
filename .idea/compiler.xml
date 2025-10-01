@@ -18,6 +18,9 @@
           <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
           <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/mapstruct/mapstruct-processor/1.6.2/mapstruct-processor-1.6.2.jar" />
           <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/mapstruct/mapstruct/1.6.2/mapstruct-1.6.2.jar" />
+          <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+          <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/mapstruct/mapstruct-processor/1.6.2/mapstruct-processor-1.6.2.jar" />
+          <entry name="$PROJECT_DIR$/../../../../Tools/apache-maven-3.9.11-bin/apache-maven-3.9.11/mvn_repo/org/mapstruct/mapstruct/1.6.2/mapstruct-1.6.2.jar" />
         </processorPath>
         <module name="jc-club-auth-infra" />
         <module name="jc-club-gateway" />

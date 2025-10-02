@@ -57,12 +57,13 @@ public class ReceiveTextMsgHandler implements WxChatMsgHandler{
         if (!content.matches(".*" + KEY_WORD + ".*")) {
             if(content.matches(".*运势.*")) {
                 String context;
-                if (redisUtil.get(LUCK + fromUserName) != null) {
-                    String score = redisUtil.get(redisUtil.buildKey(LUCK ,fromUserName));
+                String luckKey = redisUtil.buildKey(LUCK, fromUserName);
+                if (redisUtil.get(luckKey) != null) {
+                    String score = redisUtil.get(luckKey);
                     context = buildTextResponse(fromUserName, toUserName, "你今天已经测过啦！\n你今天的运势分数是：" + score + "\n" + sentences[Integer.parseInt(score) / 10]);
                 } else {
                     int score = new Random().nextInt(101);
-                    redisUtil.setNx(LUCK + fromUserName, String.valueOf(score), 1L, TimeUnit.DAYS);
+                    redisUtil.setNx(luckKey, String.valueOf(score), 1L, TimeUnit.DAYS);
                     context = buildTextResponse(fromUserName, toUserName, "你今天的运势分数是：" + score + "\n" + sentences[score / 10]);
                 }
                 return context;

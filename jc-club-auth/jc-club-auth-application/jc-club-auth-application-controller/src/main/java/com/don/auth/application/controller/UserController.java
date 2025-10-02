@@ -91,7 +91,7 @@ public class UserController {
      * @return
      */
     @RequestMapping("getUserInfo")
-    public Result<Boolean> getUserInfo(@RequestBody AuthUserDTO authUserDTO){
+    public Result<AuthUserDTO> getUserInfo(@RequestBody AuthUserDTO authUserDTO){
         try{
             if(log.isInfoEnabled()){
                 log.info("UserController.getUserInfo.dto:{}", JSON.toJSONString(authUserDTO));

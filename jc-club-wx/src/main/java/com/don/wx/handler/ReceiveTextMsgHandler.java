@@ -62,7 +62,7 @@ public class ReceiveTextMsgHandler implements WxChatMsgHandler{
                 } else {
                     int score = new Random().nextInt(101);
                     redisUtil.setNx(LUCK + fromUserName, String.valueOf(score), 1L, TimeUnit.DAYS);
-                    context = buildTextResponse(fromUserName, toUserName, "你今天已经测过啦！\n你今天的运势分数是：" + score + "\n" + sentences[score / 10]);
+                    context = buildTextResponse(fromUserName, toUserName, "你今天的运势分数是：" + score + "\n" + sentences[score / 10]);
                 }
                 return context;
             }

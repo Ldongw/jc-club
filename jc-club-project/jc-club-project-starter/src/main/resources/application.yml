@@ -5,7 +5,7 @@ spring:
     username: root
     password: IBKft6lh/UfoEgrdMkY8sztU+TAkr1YnIa8GSxWfGazRztxooRnpywq0knW3blOkU8DKmtzgKfDCagDXIunr9g==
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3307/data?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF8
+    url: jdbc:mysql://localhost:3306/data?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF8
     #&useSSL=true
     type: com.alibaba.druid.pool.DruidDataSource
     druid:

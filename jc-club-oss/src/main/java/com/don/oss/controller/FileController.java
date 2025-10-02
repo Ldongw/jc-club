@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.xml.transform.Result;
 import java.util.List;
 
 /**
@@ -45,7 +46,7 @@ public class FileController {
     }
 
     @RequestMapping("/upload")
-    public String upload(MultipartFile uploadFile, String bucketName, String objectName){
-        return fileService.uploadFile(uploadFile, bucketName, objectName);
+    public String upload(MultipartFile uploadFile, String bucket, String objectName){
+        return fileService.uploadFile(uploadFile, bucket, objectName);
     }
 }

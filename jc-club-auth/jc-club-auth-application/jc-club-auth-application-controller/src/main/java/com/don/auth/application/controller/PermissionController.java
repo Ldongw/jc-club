@@ -14,9 +14,12 @@ import com.google.common.base.Preconditions;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @author A
@@ -95,4 +98,21 @@ public class PermissionController {
         }
     }
 
+    /**
+     * 删除用户
+     * @param userName
+     * @return
+     */
+    @RequestMapping("getPermission")
+    public Result<List<String>> getPermission(String userName){
+        try{
+            log.info("PermissionController.getPermission.dto:{}", userName);
+            Preconditions.checkArgument(!StringUtils.isBlank(userName), "用户 id 不能为空！");
+
+            return Result.ok(authPermissionDomainService.getPermission(userName));
+        }catch (Exception e){
+            log.error("PermissionController.getPermission.error:{}", e.getMessage());
+            return Result.fail("查询用户权限失败！");
+        }
+    }
 }

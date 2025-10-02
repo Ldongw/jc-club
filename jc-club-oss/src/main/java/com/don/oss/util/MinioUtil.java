@@ -39,10 +39,12 @@ public class MinioUtil {
     }
     /**
      * 上传文件
+     * 内存不能开太大 ಥ﹏ಥ，开多了贵
      */
     public void uploadFile(InputStream inputStream, String bucket, String objectName) throws Exception {
         minioClient.putObject(PutObjectArgs.builder().bucket(bucket).object(objectName).
-                stream(inputStream, -1, Integer.MAX_VALUE).build());
+                stream(inputStream, -1, 10 * 1024 * 1024).build());
+        inputStream.close();
     }
 
     /**
@@ -109,7 +111,7 @@ public class MinioUtil {
                             .method(Method.GET)
                             .bucket(bucketName)
                             .object(objectName)
-                            .expiry(7, TimeUnit.DAYS) // 设置过期时间，默认7天
+//                            .expiry(7, TimeUnit.DAYS) // 设置过期时间，默认7天
                             .build()
             );
         } catch (Exception e) {

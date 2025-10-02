@@ -4,6 +4,7 @@ import com.don.oss.entity.FileInfo;
 import com.don.oss.util.MinioUtil;
 import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -20,6 +21,12 @@ public class MinioStorageAdapter implements StorageAdapter {
     @Autowired
     private MinioUtil minioUtil;
 
+    /**
+     * minioUrl
+     */
+    @Value("${minio.url}")
+    private String url;
+
     @Override
     @SneakyThrows
     public void createBucket(String bucket) {
@@ -30,10 +37,10 @@ public class MinioStorageAdapter implements StorageAdapter {
     @SneakyThrows
     public void uploadFile(MultipartFile uploadFile, String bucket, String objectName) {
         minioUtil.createBucket(bucket);
-        if(objectName != null){
-            minioUtil.uploadFile(uploadFile.getInputStream(), bucket, objectName + "/" + uploadFile.getName());
-        }else {
-            minioUtil.uploadFile(uploadFile.getInputStream(), bucket, uploadFile.getName());
+        if (objectName != null) {
+            minioUtil.uploadFile(uploadFile.getInputStream(), bucket, objectName + "/" + uploadFile.getOriginalFilename());
+        } else {
+            minioUtil.uploadFile(uploadFile.getInputStream(), bucket, "/" + uploadFile.getOriginalFilename());
         }
     }
 
@@ -69,7 +76,8 @@ public class MinioStorageAdapter implements StorageAdapter {
 
     @Override
     public String getUrl(String bucketName, String objectName) {
-        return minioUtil.getUrl(bucketName, objectName);
+        return url + "/" + bucketName + "/" + objectName;
+        //return minioUtil.getUrl(bucketName, objectName);
     }
 
 }

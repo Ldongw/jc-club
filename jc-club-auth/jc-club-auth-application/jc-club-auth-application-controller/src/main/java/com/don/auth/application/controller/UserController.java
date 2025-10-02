@@ -93,9 +93,9 @@ public class UserController {
     @RequestMapping("getUserInfo")
     public Result<AuthUserDTO> getUserInfo(@RequestBody AuthUserDTO authUserDTO){
         try{
-            if(log.isInfoEnabled()){
+//            if(log.isInfoEnabled()){
                 log.info("UserController.getUserInfo.dto:{}", JSON.toJSONString(authUserDTO));
-            }
+//            }
             Preconditions.checkArgument(!StringUtils.isBlank(authUserDTO.getUserName()), "用户名不能为空！");
 
             AuthUserBO authUserBO = AuthUserDTOConverter.INSTANCE.convertDTOToBO(authUserDTO);

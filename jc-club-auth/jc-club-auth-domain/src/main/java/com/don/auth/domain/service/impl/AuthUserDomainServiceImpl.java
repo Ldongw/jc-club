@@ -148,7 +148,6 @@ public class AuthUserDomainServiceImpl implements AuthUserDomainService {
         AuthUser authUser = new AuthUser();
         authUser.setUserName(authUserBO.getUserName());
         AuthUserBO ans = AuthUserBOConverter.INSTANCE.convertEntityToBO(authUserService.queryByCondition(authUser));
-        log.info( "当前用户信息：{}", JSON.toJSONString(ans) );
         return ans;
     }
 }

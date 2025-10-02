@@ -103,6 +103,7 @@ public class SubjectCategoryController {
                 SubjectCategoryDTO DTO = SubjectCategoryDTOConverter.INSTANCE.converBOToCategoryDTO(categoryBO);
                 List<SubjectLabelDTO> subjectLabelDTOList = SubjectLabelDTOConverter.INSTANCE.convertBOtoLabelDTOList(categoryBO.getLabelBOList());
                 DTO.setLabelDTOList(subjectLabelDTOList);
+                subjectCategoryDTOList.add(DTO);
             }
             return Result.ok(subjectCategoryDTOList);
         }catch (Exception e){

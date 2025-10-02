@@ -53,9 +53,10 @@ public class ReceiveTextMsgHandler implements WxChatMsgHandler{
         String fromUserName = msgMap.get("FromUserName");
         String toUserName = msgMap.get("ToUserName");
 
+        //今日运势
         if (!content.matches(".*" + KEY_WORD + ".*")) {
             if(content.matches(".*运势.*")) {
-                String context = null;
+                String context;
                 if (redisUtil.get(LUCK + fromUserName) != null) {
                     String score = redisUtil.get(LUCK + fromUserName);
                     context = buildTextResponse(fromUserName, toUserName, "你今天已经测过啦！\n你今天的运势分数是：" + score + "\n" + sentences[Integer.parseInt(score) / 10]);
@@ -66,6 +67,7 @@ public class ReceiveTextMsgHandler implements WxChatMsgHandler{
                 }
                 return context;
             }
+
             return buildTextResponse(fromUserName, toUserName, "脑婆我喜欢你啊！");
             /*"<xml>\n" +
                     "  <ToUserName><![CDATA[" + fromUserName + "]]></ToUserName>\n" +
@@ -92,8 +94,8 @@ public class ReceiveTextMsgHandler implements WxChatMsgHandler{
 
     private String buildTextResponse(String fromUserName, String toUserName, String content) {
         return "<xml>\n" +
-                "  <ToUserName><![CDATA[" + toUserName + "]]></ToUserName>\n" +
-                "  <FromUserName><![CDATA[" + fromUserName + "]]></FromUserName>\n" +
+                "  <ToUserName><![CDATA[" + fromUserName + "]]></ToUserName>\n" +
+                "  <FromUserName><![CDATA[" + toUserName + "]]></FromUserName>\n" +
                 "  <CreateTime>12345678</CreateTime>\n" +
                 "  <MsgType><![CDATA[text]]></MsgType>\n" +
                 "  <Content><![CDATA[" + content + "]]></Content>\n" +

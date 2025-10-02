@@ -117,6 +117,7 @@ public class SubjectCategoryDomainServiceImpl implements SubjectCategoryDomainSe
             List<SubjectMapping> subjectMappingList = subjectMappingService.queryLabelId(subjectMapping);
             if (CollectionUtils.isEmpty(subjectMappingList))
                 continue;
+
             List<Long> labelIdList = subjectMappingList.stream().map(SubjectMapping::getLabelId).toList();
             List<SubjectLabel> subjectLabelList = subjectLabelService.batchQueryById(labelIdList);
             List<SubjectLabelBO> labelBOList = new LinkedList<>();

@@ -91,7 +91,7 @@ public class UserController {
      * @return
      */
     @RequestMapping("getUserInfo")
-    public Result<AuthUserDTO> getUserInfo(/*@RequestBody AuthUserDTO authUserDTO*/String userName){
+    public Result<AuthUserDTO> getUserInfo(@RequestBody String userName){
         try{
             AuthUserDTO authUserDTO = new AuthUserDTO();
             authUserDTO.setUserName(userName);

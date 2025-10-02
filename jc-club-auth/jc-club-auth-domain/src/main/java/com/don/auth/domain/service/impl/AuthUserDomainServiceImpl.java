@@ -65,7 +65,6 @@ public class AuthUserDomainServiceImpl implements AuthUserDomainService {
     public Boolean register(AuthUserBO authUserBO) {
         AuthUser authUser = AuthUserBOConverter.INSTANCE.convertBOToEntity(authUserBO);
         Integer existCount = authUserService.queryByConditionCount(authUser);
-        log.info("当前查询到和{}相同的用户有{}个", JSON.toJSONString(authUser), existCount);
         if(existCount > 0)
             return true;
         if(StringUtils.isNotBlank(authUser.getPassword())) {

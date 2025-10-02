@@ -61,4 +61,16 @@ public class AuthUserServiceImpl implements AuthUserService {
     public boolean deleteById(Long id) {
         return this.authUserDao.deleteById(id) > 0;
     }
+
+    @Override
+    public Integer queryByConditionCount(AuthUser authUser) {
+        return (int) this.authUserDao.count(authUser);
+    }
+
+    @Override
+    public AuthUser queryByCondition(AuthUser authUser) {
+        return this.authUserDao.queryAllByLimit(authUser);
+    }
+
+
 }

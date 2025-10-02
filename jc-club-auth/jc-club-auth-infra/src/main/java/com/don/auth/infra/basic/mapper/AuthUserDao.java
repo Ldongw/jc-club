@@ -27,7 +27,7 @@ public interface AuthUserDao {
      * @param authUser 对象参数
      * @return 对象列表
      */
-    List<AuthUser> queryAllByLimit(AuthUser authUser);
+    AuthUser queryAllByLimit(AuthUser authUser);
     /**
      * 统计总行数
      *

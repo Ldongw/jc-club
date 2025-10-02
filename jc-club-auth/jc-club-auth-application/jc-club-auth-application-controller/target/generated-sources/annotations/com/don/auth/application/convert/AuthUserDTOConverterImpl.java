@@ -6,8 +6,8 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-09-29T21:04:33+0800",
-    comments = "version: 1.6.2, compiler: javac, environment: Java 23.0.2 (Oracle Corporation)"
+    date = "2025-10-01T20:37:07+0800",
+    comments = "version: 1.6.2, compiler: javac, environment: Java 21 (Oracle Corporation)"
 )
 public class AuthUserDTOConverterImpl implements AuthUserDTOConverter {
 
@@ -37,5 +37,33 @@ public class AuthUserDTOConverterImpl implements AuthUserDTOConverter {
         authUserBO.setIsDeleted( authUserDTO.getIsDeleted() );
 
         return authUserBO;
+    }
+
+    @Override
+    public AuthUserDTO convertBOToDTO(AuthUserBO userInfo) {
+        if ( userInfo == null ) {
+            return null;
+        }
+
+        AuthUserDTO authUserDTO = new AuthUserDTO();
+
+        authUserDTO.setId( userInfo.getId() );
+        authUserDTO.setUserName( userInfo.getUserName() );
+        authUserDTO.setNickName( userInfo.getNickName() );
+        authUserDTO.setEmail( userInfo.getEmail() );
+        authUserDTO.setPhone( userInfo.getPhone() );
+        authUserDTO.setPassword( userInfo.getPassword() );
+        authUserDTO.setSex( userInfo.getSex() );
+        authUserDTO.setAvatar( userInfo.getAvatar() );
+        authUserDTO.setStatus( userInfo.getStatus() );
+        authUserDTO.setIntroduce( userInfo.getIntroduce() );
+        authUserDTO.setExtJson( userInfo.getExtJson() );
+        authUserDTO.setCreatedBy( userInfo.getCreatedBy() );
+        authUserDTO.setCreatedTime( userInfo.getCreatedTime() );
+        authUserDTO.setUpdateBy( userInfo.getUpdateBy() );
+        authUserDTO.setUpdateTime( userInfo.getUpdateTime() );
+        authUserDTO.setIsDeleted( userInfo.getIsDeleted() );
+
+        return authUserDTO;
     }
 }

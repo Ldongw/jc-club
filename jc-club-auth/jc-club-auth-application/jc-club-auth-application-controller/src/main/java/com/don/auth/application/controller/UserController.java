@@ -86,6 +86,48 @@ public class UserController {
     }
 
     /**
+     * 获取用户信息
+     * @param authUserDTO
+     * @return
+     */
+    @RequestMapping("getUserInfo")
+    public Result<Boolean> getUserInfo(@RequestBody AuthUserDTO authUserDTO){
+        try{
+            if(log.isInfoEnabled()){
+                log.info("UserController.getUserInfo.dto:{}", JSON.toJSONString(authUserDTO));
+            }
+            Preconditions.checkArgument(!StringUtils.isBlank(authUserDTO.getUserName()), "用户名不能为空！");
+
+            AuthUserBO authUserBO = AuthUserDTOConverter.INSTANCE.convertDTOToBO(authUserDTO);
+            AuthUserBO userInfo = authUserDomainService.getUserInfo(authUserBO);
+            return Result.ok(AuthUserDTOConverter.INSTANCE.convertBOToDTO(userInfo));
+        }catch (Exception e){
+            log.error("UserController.getUserInfo.error:{}", e.getMessage());
+            return Result.fail("更新用户失败！");
+        }
+    }
+
+
+    /**
+     * 用户退出
+     * @param userName
+     * @return
+     */
+    @RequestMapping("logOut")
+    public Result logOut(@RequestParam String userName){
+        try{
+            log.info("UserController.logOut.dto:{}", userName);
+            Preconditions.checkArgument(!StringUtils.isBlank(userName), "用户名不能为空！");
+
+            StpUtil.logout(userName);
+            return Result.ok();
+        }catch (Exception e){
+            log.error("UserController.logOut.error:{}", e.getMessage());
+            return Result.fail("用户登出失败！");
+        }
+    }
+
+    /**
      * 角色启用/禁用
      * @param authUserDTO
      * @return

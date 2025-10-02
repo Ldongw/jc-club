@@ -3,6 +3,7 @@ package com.don.oss.util;
 import com.don.oss.entity.FileInfo;
 import io.minio.*;
 import io.minio.errors.*;
+import io.minio.http.Method;
 import io.minio.messages.Bucket;
 import io.minio.messages.Item;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 /**
@@ -98,5 +100,20 @@ public class MinioUtil {
         minioClient.removeObject(
                 RemoveObjectArgs.builder().bucket(bucket).object(objectName).build()
         );
+    }
+
+    public String getUrl(String bucketName, String objectName) {
+        try {
+            return minioClient.getPresignedObjectUrl(
+                    GetPresignedObjectUrlArgs.builder()
+                            .method(Method.GET)
+                            .bucket(bucketName)
+                            .object(objectName)
+                            .expiry(7, TimeUnit.DAYS) // 设置过期时间，默认7天
+                            .build()
+            );
+        } catch (Exception e) {
+            throw new RuntimeException("获取文件URL失败", e);
+        }
     }
 }

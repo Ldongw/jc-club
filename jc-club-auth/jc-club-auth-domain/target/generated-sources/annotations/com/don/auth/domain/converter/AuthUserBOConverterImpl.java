@@ -6,8 +6,8 @@ import javax.annotation.processing.Generated;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-09-29T21:04:32+0800",
-    comments = "version: 1.6.2, compiler: javac, environment: Java 23.0.2 (Oracle Corporation)"
+    date = "2025-10-01T20:37:04+0800",
+    comments = "version: 1.6.2, compiler: javac, environment: Java 21 (Oracle Corporation)"
 )
 public class AuthUserBOConverterImpl implements AuthUserBOConverter {
 
@@ -37,5 +37,33 @@ public class AuthUserBOConverterImpl implements AuthUserBOConverter {
         authUser.setIsDeleted( authUserBO.getIsDeleted() );
 
         return authUser;
+    }
+
+    @Override
+    public AuthUserBO convertEntityToBO(AuthUser authUser) {
+        if ( authUser == null ) {
+            return null;
+        }
+
+        AuthUserBO authUserBO = new AuthUserBO();
+
+        authUserBO.setId( authUser.getId() );
+        authUserBO.setUserName( authUser.getUserName() );
+        authUserBO.setNickName( authUser.getNickName() );
+        authUserBO.setEmail( authUser.getEmail() );
+        authUserBO.setPhone( authUser.getPhone() );
+        authUserBO.setPassword( authUser.getPassword() );
+        authUserBO.setSex( authUser.getSex() );
+        authUserBO.setAvatar( authUser.getAvatar() );
+        authUserBO.setStatus( authUser.getStatus() );
+        authUserBO.setIntroduce( authUser.getIntroduce() );
+        authUserBO.setExtJson( authUser.getExtJson() );
+        authUserBO.setCreatedBy( authUser.getCreatedBy() );
+        authUserBO.setCreatedTime( authUser.getCreatedTime() );
+        authUserBO.setUpdateBy( authUser.getUpdateBy() );
+        authUserBO.setUpdateTime( authUser.getUpdateTime() );
+        authUserBO.setIsDeleted( authUser.getIsDeleted() );
+
+        return authUserBO;
     }
 }

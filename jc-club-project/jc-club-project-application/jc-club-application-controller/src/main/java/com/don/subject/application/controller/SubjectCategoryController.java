@@ -3,7 +3,9 @@ package com.don.subject.application.controller;
 import com.alibaba.druid.util.StringUtils;
 import com.alibaba.fastjson.JSON;
 import com.don.subject.application.convert.SubjectCategoryDTOConverter;
+import com.don.subject.application.convert.SubjectLabelDTOConverter;
 import com.don.subject.application.dto.SubjectCategoryDTO;
+import com.don.subject.application.dto.SubjectLabelDTO;
 import com.don.subject.common.entity.Result;
 import com.don.subject.domain.convert.SubjectCategoryConverter;
 import com.don.subject.domain.entity.SubjectCategoryBO;
@@ -13,6 +15,8 @@ import com.google.common.base.Preconditions;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.LinkedList;
 import java.util.List;
 
 //import javax.annotation.Resource;
@@ -75,6 +79,34 @@ public class SubjectCategoryController {
             return Result.ok(subjectCategoryDTOList);
         }catch (Exception e){
             log.error("SubjectCategoryController.queryCategoryByPrimary.error:{}",e.getMessage());
+            return Result.fail(e.getMessage());
+        }
+    }
+
+    /**
+     * 查询分类及标签（一次性）
+     * @param subjectCategoryDTO
+     * @return
+     */
+
+    @PostMapping("/queryCategoryAndLabel")
+    public Result<SubjectCategoryDTO> queryCategoryAndLabel(@RequestBody SubjectCategoryDTO subjectCategoryDTO){
+        try{
+            if(log.isInfoEnabled()){
+                log.info("SubjectCategoryController.queryCategoryAndLabel.dto:{}",JSON.toJSONString(subjectCategoryDTO));
+            }
+            Preconditions.checkNotNull(subjectCategoryDTO.getId(),"分类ID不能为空");
+            SubjectCategoryBO subjectCategoryBO = SubjectCategoryDTOConverter.INSTANCE.convertDToBCategory(subjectCategoryDTO);
+            List<SubjectCategoryBO> subjectCategoryBOList = subjectCategoryDomainService.queryCategoryAndLabel(subjectCategoryBO);
+            List<SubjectCategoryDTO> subjectCategoryDTOList = new LinkedList<>();
+            for (SubjectCategoryBO categoryBO : subjectCategoryBOList) {
+                SubjectCategoryDTO DTO = SubjectCategoryDTOConverter.INSTANCE.converBOToCategoryDTO(categoryBO);
+                List<SubjectLabelDTO> subjectLabelDTOList = SubjectLabelDTOConverter.INSTANCE.convertBOtoLabelDTOList(categoryBO.getLabelBOList());
+                DTO.setLabelDTOList(subjectLabelDTOList);
+            }
+            return Result.ok(subjectCategoryDTOList);
+        }catch (Exception e){
+            log.error("SubjectCategoryController.queryCategoryAndLabel.error:{}",e.getMessage());
             return Result.fail(e.getMessage());
         }
     }

@@ -42,4 +42,12 @@ public interface AuthUserService {
      */
     boolean deleteById(Long id);
 
+    /**
+     * 根据条件查询数量
+     * @param authUser
+     * @return
+     */
+    Integer queryByConditionCount(AuthUser authUser);
+
+    AuthUser queryByCondition(AuthUser authUser);
 }

@@ -9,6 +9,7 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -38,4 +39,13 @@ public class FileController {
         return storageType;
     }
 
+    @RequestMapping("/getUrl")
+    public String getUrl(String bucketName, String objectName){
+        return fileService.getUrl(bucketName, objectName);
+    }
+
+    @RequestMapping("/upload")
+    public String upload(MultipartFile uploadFile, String bucketName, String objectName){
+        return fileService.uploadFile(uploadFile, bucketName, objectName);
+    }
 }

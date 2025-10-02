@@ -63,6 +63,9 @@ public class AuthUserDomainServiceImpl implements AuthUserDomainService {
     @Transactional(rollbackFor = Exception.class)
     public Boolean register(AuthUserBO authUserBO) {
         AuthUser authUser = AuthUserBOConverter.INSTANCE.convertBOToEntity(authUserBO);
+        Integer existCount = authUserService.queryByConditionCount(authUser);
+        if(existCount > 0)
+            return true;
         if(StringUtils.isNotBlank(authUser.getPassword())) {
             authUser.setPassword(SaSecureUtil.md5BySalt(authUser.getPassword(), salt));
         }
@@ -137,5 +140,12 @@ public class AuthUserDomainServiceImpl implements AuthUserDomainService {
         SaTokenInfo tokenInfo = StpUtil.getTokenInfo();
 
         return tokenInfo;
+    }
+
+    @Override
+    public AuthUserBO getUserInfo(AuthUserBO authUserBO) {
+        AuthUser authUser = new AuthUser();
+        authUser.setUserName(authUserBO.getUserName());
+        return AuthUserBOConverter.INSTANCE.convertEntityToBO(authUserService.queryByCondition(authUser));
     }
 }

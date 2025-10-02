@@ -50,4 +50,6 @@ public interface StorageAdapter {
      * 删除文件
      */
     public void deleteObject(String bucket, String objectName);
+
+    String getUrl(String bucketName, String objectName);
 }

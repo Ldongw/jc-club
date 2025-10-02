@@ -3,6 +3,7 @@ package com.don.auth.domain.service.impl;
 import cn.dev33.satoken.secure.SaSecureUtil;
 import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
+import com.alibaba.fastjson.JSON;
 import com.don.auth.common.enums.AuthUserStatusEnum;
 import com.don.auth.common.enums.IsDeletedFlagEnum;
 import com.don.auth.domain.constants.AuthConstant;
@@ -64,6 +65,7 @@ public class AuthUserDomainServiceImpl implements AuthUserDomainService {
     public Boolean register(AuthUserBO authUserBO) {
         AuthUser authUser = AuthUserBOConverter.INSTANCE.convertBOToEntity(authUserBO);
         Integer existCount = authUserService.queryByConditionCount(authUser);
+        log.info("当前查询到和{}相同的用户有{}个", JSON.toJSONString(authUser), existCount);
         if(existCount > 0)
             return true;
         if(StringUtils.isNotBlank(authUser.getPassword())) {

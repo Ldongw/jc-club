@@ -87,12 +87,14 @@ public class UserController {
 
     /**
      * 获取用户信息
-     * @param authUserDTO
+     * @param userName
      * @return
      */
     @RequestMapping("getUserInfo")
-    public Result<AuthUserDTO> getUserInfo(@RequestBody AuthUserDTO authUserDTO){
+    public Result<AuthUserDTO> getUserInfo(/*@RequestBody AuthUserDTO authUserDTO*/String userName){
         try{
+            AuthUserDTO authUserDTO = new AuthUserDTO();
+            authUserDTO.setUserName(userName);
             if(log.isInfoEnabled()){
                 log.info("UserController.getUserInfo.dto:{}", JSON.toJSONString(authUserDTO));
             }

@@ -22,7 +22,7 @@ public class SaTokenConfigure {
             // 鉴权方法：每次访问进入 
             .setAuth(obj -> {
                 // 登录校验 -- 拦截所有路由，并排除/user/doLogin 用于开放登录 
-                SaRouter.match("/auth/**", "/auth/user/doLogin", r -> StpUtil.checkRole("normal_user"));
+                SaRouter.match("/auth/**", "/auth/user/doLogin", r -> StpUtil.checkLogin());
                 SaRouter.match("/oss/**", r -> StpUtil.checkLogin());
                 SaRouter.match("/subject/subject/**", r -> StpUtil.checkPermission("subject:add"));
                 SaRouter.match("/subject/**", r -> StpUtil.checkLogin());
